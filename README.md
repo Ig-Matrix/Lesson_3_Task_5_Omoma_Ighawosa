@@ -1,6 +1,6 @@
 ##CSS Task 5 | Responsive Design Using Grid and Advanced CSS Techniques
 
-Link To live site : 
+Link To live site : https://ig-matrix.github.io/Lesson_3_Task_5_Omoma_Ighawosa/
 
 ##How to run/test this project
 

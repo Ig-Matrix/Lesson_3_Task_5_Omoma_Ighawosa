@@ -84,8 +84,12 @@ header {
 
 .left {
 	display: flex;
+	width: 90%;
 	align-items: center;
-	gap: .5rem;
+	justify-content: space-between;
+	gap: 2rem;
+	margin-top: 1.5rem;
+	/* margin: .7rem 1.3rem 0; */
 }
 
 .left img {
@@ -94,7 +98,6 @@ header {
 	height: auto;
 	cursor: pointer;
 	transition: all .5s ease-in-out;
-	display: none;
 }
 
 .title {
@@ -109,7 +112,6 @@ header {
 	width: fit-content;
 	margin:15px auto;
 	font-size: 1.6rem;
-
 }
 
 @keyframes fade-in {
@@ -143,6 +145,7 @@ header .left h1::after {
 
 nav {
 	padding: 1rem;
+	margin-bottom: .9rem;
 }
 
 nav a{
@@ -151,29 +154,31 @@ nav a{
 	transition: all 0.2s ease-in-out;
 	text-decoration: none; 
 	padding: 4px 8px;
-	
 }
 
 nav a:hover {
 	color: #fff;
 	background-color: #333;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
 }
 
-nav button:last-child a{
+nav a:first-child {
 	color: #fff; 
-	font-size: .8rem;
+	font-size: 1rem;
 	background-color: #333;
 	transition:all 0.2s ease-in-out;
 	text-decoration: none;
 	border: none;
-	padding: 10px 20px;
-	border-radius: 5px;
+	padding: 1px 15px;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
 }
 
-nav button:last-child a:hover {
+nav a:first-child:hover {
 	color: #333;
 	background-color: #fff;
-	border: 1px solid #333;
+	border: none;
 }
 
 main {
@@ -276,17 +281,36 @@ footer {
 
 /* Responsive Layout */
 
-/* Screens between 0 - 300px */
-@media screen and (width <=300px) {
-	nav, .download {
+/* Screens between 0 - 330px */
+@media screen and (width <=326px) {
+	.stars .material-icons-outlined, .time span {
+		font-size: .9rem;
+	}
+
+	.download button {
+		padding: .6rem;
+	}
+
+	nav {
 		display: none;
+		margin: 0;
+	}
+
+	.title h1{
+		font-size: 1rem;
+	}
+
+	.left {
+		margin-top: 0;
+		gap: 1rem;
+		padding: 0;
 	}
 }
 
 /* Tablets */
 @media screen and (width >=769px) {
-	.left img {
-		display: block;
+	nav a {
+		margin-right: 2.2rem;
 	}
 
 	.left img:hover {
@@ -312,8 +336,23 @@ footer {
 		padding:0 1.8rem;
 	}
 
+	nav a {
+		margin-right: 1rem;
+	}
+
+	header .left {
+		margin-top: 0;
+		width: fit-content;
+	}
+	
 	main {
 		grid-template-columns: repeat(3, 1fr );
 		grid-template-rows: repeat(2, minmax(350px, 1fr));
+	}
+
+	footer {
+		flex-direction: row;
+		justify-content: space-between;
+		padding:0 3rem ;
 	}
 }
